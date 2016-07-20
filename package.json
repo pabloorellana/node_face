@@ -1,0 +1,17 @@
+{
+  "name": "node_face",
+  "version": "0.0.1",
+  "description": "\"POC for REST concepts using express and mongodb\"",
+  "scripts": {
+    "start": "supervisor src/server.js"
+  },
+  "author": "Pablo Orellana <pablo.orellana.torrez@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.5",
+    "morgan": "latest",
+    "q": "^1.4.1"
+  }
+}
