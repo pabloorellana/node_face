@@ -77,6 +77,15 @@ app.get('/users/:userId/posts', function (req, res) {
   })
 });
 
+app.get('/users/:userId/posts/:postId', function (req, res) {
+  var postId = req.params.postId;
+  Posts.findOne({id: postId}).then(function (result) {
+    res.send(result)
+  }).catch(function (err) {
+    console.log(err)
+  })
+});
+
 app.post('/users/:userId/posts', function (req, res) {
   Posts.create(req.body).then(function (result) {
     res.send(result)
@@ -88,7 +97,7 @@ app.post('/users/:userId/posts', function (req, res) {
 app.put('/users/:userId/posts/:postId', function (req, res) {
   var postId = req.params.postId;
 
-  Post.findByIdAndUpdate(postId, req.body).then(function (result) {
+  Posts.findByIdAndUpdate(postId, req.body).then(function (result) {
     res.send(result)
   }).catch(function (err) {
     console.log(err)
